@@ -117,7 +117,7 @@
       <!-- operating zone -->
       <g>
         <rect class="zoneFill" x="230" y="120" width="400" height="270" rx="14"/>
-        <text x="430" y="150" text-anchor="middle" font-family="var(--mono)" font-size="12" letter-spacing="2" fill="var(--muted)">OPERATING ZONE</text>
+        <text x="430" y="150" text-anchor="middle" font-family="var(--mono)" font-size="12" letter-spacing="2"><tspan fill="var(--muted)">OPERATING ZONE - </tspan><tspan id="statusLabel" fill="var(--blue)">MONITORING</tspan></text>
       </g>
 
       <!-- robot + its own (inside-out) sensors -->
@@ -126,7 +126,7 @@
           <g class="robotSensors">
             <path class="arc" d="M0 0 L150 -48 A157 157 0 0 1 150 48 Z" fill="url(#coneGrad)" stroke="var(--blue)" stroke-width="1.4" stroke-opacity=".7"/>
             <path class="arc" d="M0 0 L150 -48 A157 157 0 0 1 150 48 Z" fill="url(#coneGrad)" stroke="var(--blue)" stroke-width="1.4" stroke-opacity=".7" transform="scale(-1,1)"/>
-            <text x="0" y="92" text-anchor="middle" font-family="var(--mono)" font-size="10.5" letter-spacing="1" fill="var(--faint)">robot's own sensors (look left/right)</text>
+            <text x="0" y="112" text-anchor="middle" font-family="var(--mono)" font-size="10.5" letter-spacing="1" fill="var(--faint)">robot's own sensors (look forward/rear)</text>
           </g>
           <rect class="robotBody" x="-26" y="-26" width="52" height="52" rx="9" fill="#0f2740" stroke="var(--blue)" stroke-width="2"/>
           <circle cx="0" cy="0" r="5" fill="var(--blue)"/>
@@ -156,10 +156,6 @@
         <rect x="-7" y="2" width="14" height="20" rx="6" fill="var(--white)"/>
       </g>
 
-      <!-- status readout -->
-      <text class="statusTxt" x="40" y="448" font-family="var(--mono)" font-size="13" letter-spacing="1.5">
-        <tspan id="statusLabel" fill="var(--blue)">&#9679; MONITORING</tspan>
-      </text>
     </svg>
   </div>
 
@@ -173,10 +169,10 @@
 
 <script>
   const BEATS = [
-    { status:["\u25CF MONITORING","var(--blue)"] },
-    { status:["\u25CF MONITORING","var(--blue)"] },
-    { status:["\u25CF OUTSIDE-IN ACTIVE","var(--orange)"] },
-    { status:["\u25CF SAFE STOP","var(--orange)"] }
+    { status:["MONITORING","var(--blue)"] },
+    { status:["MONITORING","var(--blue)"] },
+    { status:["OUTSIDE-IN ACTIVE","var(--orange)"] },
+    { status:["SAFE STOP","var(--orange)"] }
   ];
 
   const stage = document.getElementById("stage");
